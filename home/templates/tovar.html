@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_content %}
+
+<!-- Стиль для стрелок -->
+
+<style>
+    .slick-prev:before,
+    .slick-next:before {
+        display: none;
+
+    }
+
+    .slick-prev,
+    .slick-next {
+        width: 40px;
+        height: 36px;
+        z-index: 1;
+
+    }
+
+    .slick-prev, .slick-prev:hover, .slick-prev:focus {
+        left: 1px;
+        background: url("/static/media/img/left_st.png");
+
+
+    }
+
+    .slick-next, .slick-next:hover, .slick-next:focus {
+        right: 1px;
+        background: url("/static/media/img/rigt_st.png");
+    }
+</style>
+
+
+<div class="container-fluid tovar_page" style=";background: white">
+    <div class="row hronology" style=";height: 40px;">
+        <span style="margin-top: 10px; font-weight: 300">
+        <a href="" style="text-decoration: none"> <span style="color: orange"> {{product.category.name}} / </span>  </a>
+        <a href="" style="text-decoration: none"> <span style="color: orange"> {{product.podcategory}} / </span>  </a>
+        <span style="font-weight: 400">{{product.name}} </span>
+        </span>
+
+    </div>
+
+    <div class="row" style="margin-top: 20px;height:auto">
+
+        <div class="col-lg-6 offset-lg-0" style="">
+            <div class="row" style="">
+                <div class="col-lg-10 offset-lg-1" style="font-family: FontAwesome">
+
+                    <div class="slider">
+                        {% for image_item in product.productimage_set.all %}
+                        <div class="slide">
+                            <a href="#"> <img src="{{image_item.image.url}}" class="minimized" style="width: -webkit-fill-available;
+                            border-radius: 5%;border: 2px solid black" alt="Клик для увеличения"></a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col-lg-6 offset-lg-0" style="">
+            <div class="row" style="margin-top: 10px;text-align: center">
+                <h4 style="color:orange;"> {{product.name}} </h4>
+            </div>
+
+            <div class="row" style="margin-top: 5px ">
+                <span style="color:black;font-weight: 400"> {{ product.description|linebreaks }} </span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row" style="margin-top: 20px;background: orange;text-align: center">
+        <h5 style="color: black;letter-spacing: 2px;margin-top: 5px"> Информация о серийных номерах</h5>
+    </div>
+
+    <div class="row" style="background: whitesmoke;border: 1px solid orange;margin-bottom: 20px">
+        <div class="col-lg-6">
+            <div class="row" style=";background: whitesmoke">
+                <span style="font-weight: 500">  Артикуль: <span style="font-weight: 400"> {{product.articul}} </span> </span>
+            </div>
+
+            <div class="row" style="background: lightgray;border-top: 1px solid orange ">
+                    <span style="font-weight: 500">  Каталожные номера: <span
+                            style="font-weight: 400"> {{product.nomera}} </span> </span>
+            </div>
+
+        </div>
+
+        <div class="col-lg-6" style="text-align: center;border-left: 1px solid orange">
+            <h5 style="margin-top: 2%;color: black"> Информацию о наличии уточняйте  </h5>
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

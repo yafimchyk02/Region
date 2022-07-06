@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_content %}
+
+<div class="container-fluid container_information" style="min-height: 500px;background: black">
+    <div class="row" style="text-align: center">
+        <h1 class="text_info_main"> Кто мы? </h1>
+    </div>
+    <div class="row" style="text-align: center">
+        <p class="text_about" style="margin-top: 15px"><span style="color: orange"> "РЕГИОНАГРОСЕТЬ"</span> - один
+                из ведущих поставщиков
+                сельскохозяйственной техники в Республике Беларусь.
+            </p>
+    </div>
+
+
+    <div class="row" style="">
+        <div class="col-lg-6 offset-lg-0" style=";margin-top: 50px">
+            <img class="picture picture_info"
+                 src="/media/img/bg_info_img.jpg">
+
+        </div>
+
+        <div class="col-lg-6 offset-lg-0" style="height: auto;margin-top: 15px;min-height: 550px;">
+
+
+            <div class="row" style="text-align: center">
+                <p class="text_after_main">
+                    Мы работаем для Вас!
+                </p>
+            </div>
+
+            <div class="row" style="">
+                <p class="text_about">
+                    С 2006 года РЕГИОНАГРОСЕТЬ занимается поставкой и продажей запасных частей к сельскохозяйственной
+                    технике по всей республике. Офис компании находится в г.Барановичи (Брестская область). За годы
+                    работы у нас сложились доверительные отношения с клиентами и партнерами компании.
+                    <br>
+                    <br>
+                    Предприятия партнеров РЕГИОНАГРОСЕТЬ находятся в Германии, Италии, Испании, Словакии, Польше, Литве,
+                    Латвии, Чехии.
+                    <br>
+                    <br>
+                    Наша фирма поставляет любые запчасти к:
+                    <br>
+                    1. КОРМО- И ЗЕРНОУБОРОЧНЫМ КОМБАЙНАМ: CLAAS (Lexion, Mega, Jaguar), John Deere, Гомсельмаш;
+                    <br>
+                    2. КОСИЛКАМ: SaMASZ, Kuhn, Disco, Krone;
+                    <br>
+                    3. ПОСЕВНЫМ АГРЕГАТАМ: Lemken(АПП-6А), Rabe, Kverneland( Optima HD, АППМ-6), Лидагропроммаш(СПУ,
+                    АПП);
+                    <br>
+                    4. ПЛУГАМ: Lemken, Kverneland(ППО-8-40), Rabe, Kuhn;
+                    <br>
+                    5. КУЛЬТИВАТОРАМ: АКШ-3,6, АКШ-6, АКШ-7,2, КЧ-5,1, КПС-4,0;
+                    <br>
+                    6. БОРОНАМ: БЗСС, БДТ-3, БДТ-7;
+                    <br>
+                    7. РАЗБРАСЫВАТЕЛЯМ: ПРТ-7, ПРТ-10, ПРТ-7А, МТТ-9;
+                    <br>
+                    8. ГРАБЛЯМ: Liner, Tonutti;
+                    <br>
+                    9. ПРЕСС-ПОДБОРЩИКАМ: ПРФ-180.
+
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row" style="text-align: center">
+        <p class="text_about" style="margin-top: 1px">
+                Мы делаем ставку на длительное сотрудничество, обеспечивая не только хороший выбор товаров по
+                приятным ценам, но и профессиональный, информативный и быстрый сервис с учетом конкретных
+                потребностей каждого клиента.
+
+            </p>
+    </div>
+
+
+    <div class="row" style="min-height: 70px">
+        <a class="" style="font-weight: 300;text-align: center"
+           href="{% url 'Общий каталог' %}">
+            <button type="button" class="btn btn-warning" style="width: 50%">
+                Перейти в каталог
+            </button>
+        </a>
+    </div>
+
+</div>
+
+
+{% endblock %}

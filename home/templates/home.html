@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_content %}
+
+<style>
+    .slick-prev:before,
+    .slick-next:before {
+        display: none;
+
+    }
+
+    .slick-prev,
+    .slick-next {
+        width: 40px;
+        height: 36px;
+        z-index: 1;
+
+    }
+
+    .slick-prev, .slick-prev:hover, .slick-prev:focus {
+        left: 1px;
+
+    }
+
+    .slick-prev:hover{
+        left: 1px;
+        background: url("/static/media/img/left_st.png");
+
+    }
+
+    .slick-next, .slick-next:hover, .slick-next:focus {
+        right: 1px;
+    }
+
+    .slick-next:hover{
+        right: 1px;
+        background: url("/static/media/img/rigt_st.png");
+    }
+
+</style>
+
+<div class="container-fluid container_img">
+    <div class="row">
+        <div class="container container_text">
+            <h1 style="letter-spacing: 6px;"> «Регионагросеть» к </h1>
+            <h1> Вашим услугам</h1>
+            <p style="margin-top: 53px; font-weight: 400;">Оптимальное соотношение цены и качества</p>
+        </div>
+    </div>
+</div>
+
+
+<!--Новые поступления-->
+
+<div class="container-fluid" style="background: orange; text-align: center">
+    <div class="row">
+        <h3 style="color: black;letter-spacing: 3px"> Новые поступления</h3>
+    </div>
+</div>
+
+<div class="container-fluid new_tovar" style="height: auto;  background: whitesmoke">
+    <div class="row">
+
+        {% for product_image in products_images %}
+        <div class="col-lg-2" style="height: border-box; padding: 5px;">
+            <div class="product_item_new">
+                <a href="{% url 'товар' product_image.product.id  %}">
+                    <div>
+                        <img src="{{product_image.image.url}}" style="width: 150px;height: 100px;"
+                             class="img-responsive">
+                    </div>
+                </a>
+                <h6 style="margin-top: -8px">{{product_image.product.name}} </h6>
+                <p style="color: orange">
+                    {{product_image.product.articul}}
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+<!--Слайдер новостей-->
+
+<div class="container-fluid" style="background: orange; text-align: center">
+    <div class="row">
+        <h3 style="color: black;letter-spacing: 3px"> Актуальные новости</h3>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row" style="min-height: 150px; height:auto;background: black;border: 1px solid orange">
+        <div class="col-lg-12 offset-lg-0" style="background: ">
+            <div class="slider">
+                {% for news_item in news_items %}
+                <div class="slide">
+                    <div class="row" style="margin-top: 10px">
+                        <div class="col-lg-4 offset-lg-4" style="; text-align: center">
+                            <span style="color: white;font-weight: 500"> {{news_item.name}} </span>
+                        </div>
+                    </div>
+
+                    <div class="row" style=";margin-top: 10px">
+                        <div class="col-lg-10 offset-lg-1">
+                            <span style="color: white;font-weight: 300"> {{news_item.text}} </span>
+                        </div>
+                    </div>
+
+                    <div class="row" style="position: relative;margin-top: 2%">
+                        <div class="col-lg-3 offset-lg-8" style=";text-align: center">
+                            <span style="color: orange">{{news_item.data}}</span>
+                        </div>
+                    </div>
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+

@@ -1,0 +1,92 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-black" xmlns="http://www.w3.org/1999/html">
+    <div class="container-fluid">
+        <div class="col-lg-1 " style="">
+            <div class="row" style="height:74px">
+                <a class="navbar-brand" href="{% url 'Главная' %}" style="margin-top: -11px">
+                    <img class="picture picture_brand"
+                         src="/media/img/Favikonka.png" style="width:100px">
+                </a>
+            </div>
+        </div>
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" style="font-weight: 300;" aria-current="page"
+                       href="{% url 'Главная' %}">Главная</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" style="font-weight: 300;" id="navbarDropdownMenuLink"
+                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Каталог запчастей
+                    </a>
+                    <ul class="dropdown-menu" style="font-weight: 300;" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="{% url 'К плугам' %}">К плугам</a></li>
+                        <li><a class="dropdown-item" href="{% url 'К боронам' %}">К боронам</a></li>
+                        <li><a class="dropdown-item" href="{% url 'К культиваторам' %}">К культиваторам</a></li>
+                        <li><a class="dropdown-item" href="{% url 'К посевным' %}">К посевным агрегатам</a></li>
+                        <li><a class="dropdown-item" href="{% url 'К косилкам' %}">К косилкам</a></li>
+                        <li><a class="dropdown-item" href="{% url 'К граблям' %}">К граблям</a></li>
+                        <li><a class="dropdown-item" href="{% url 'К пресс-подбор' %}">К пресс-подборщикам</a></li>
+                        <li><a class="dropdown-item" href="{% url 'К кормоуборочным' %}">К кормоуборочным комбайнам</a>
+                        </li>
+                        <li><a class="dropdown-item" href="{% url 'К зерноуборочным' %}">К зерноуборочным комбайнам</a>
+                        </li>
+                        <li><a class="dropdown-item" href="{% url 'К картофелеуборочным' %}">К картофелеуборочной
+                            технике</a></li>
+                        <li><a class="dropdown-item" href="{% url 'К разбрасывтелям' %}">К разбрасывателям</a></li>
+                        <li><a class="dropdown-item" href="{% url 'К тракторам' %}">К тракторам</a></li>
+                        <li><a class="dropdown-item" href="{% url 'Метизы и расходные' %}">Метизы и расходные
+                            материалы </a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="font-weight: 300;" href="{% url 'info' %}">О компании </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="font-weight: 300;" href="{% url 'kontacts' %}">Контакты</a>
+                </li>
+            </ul>
+            <div class="" style="text-align: center">
+                <!-- Кнопка-триггер модального окна -->
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Оформление заказов круглосуточно
+                </button>
+
+                <!-- Модальное окно -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                     tabindex="-1"
+                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel" style="color: orange">Свяжитесь с
+                                    нами:</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Закрыть"></button>
+                            </div>
+                            <div class="modal-body" style="text-align: left;height: auto">
+                                <p> Директор:</p>
+                                <p style="margin-top: -13px"><span style="font-family: FontAwesome">  </span> + 375
+                                    (29) 729-31-72 </p>
+                                <p style="margin-top: -13px;"><span style="font-family: FontAwesome">  </span> + 375
+                                    (29) 631-98-78 (Viber) </p>
+                                <p> Специалист по продажам: </p>
+                                <p style="margin-top: -13px"><span style="font-family: FontAwesome">  </span> + 375
+                                    (29) 202-11-71 </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

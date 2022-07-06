@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_content %}
+<div class="container-fluid back_g_k_plugam ">
+    <div class="row">
+        <div class="col-lg-2" style="height:auto; background: whitesmoke">
+            <div class="row" style="min-height: 60px;">
+                <h4 style="text-align: center;padding: 10px;color: orange"> Каталог</h4>
+            </div>
+            <div class="row">
+                <h5 style="padding: 10px;color: black"> К культиваторам: </h5>
+
+                <li class="marker_katalog" style="margin-top: -10px;;color: orange">
+                    <a style="text-decoration: none" class="" href="{% url 'АКШ 6' %}">
+                        <span style="font-size: smaller;color: black">АКШ 6 (-7.2, -3.6)</span>
+                    </a>
+                </li>
+
+                <li class="marker_katalog" style=" color: orange">
+                    <a style="text-decoration: none" class="" href="{% url 'КЧ 5' %}">
+                        <span style="font-size: smaller;color: black">КЧ - 5.1 (-4.2)</span>
+                    </a>
+                </li>
+
+                <li class="marker_katalog" style=" color: orange">
+                    <a style="text-decoration: none" class="" href="{% url 'КПС 6' %}">
+                        <span style="font-size: smaller;color: black">КПС - 6</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+
+        <div class="col-lg-10" style="height: auto;background: whitesmoke">
+            <div class="row" style="background: whitesmoke;height: 60px;max-height: 60px">
+                <h1 style="text-align: center; padding: 8px;"> К культиваторам</h1>
+            </div>
+            <div class="row podrazdel">
+                <h5> Запчасти к: <span style="color: orange; font-size: small"> ПОДКАТЕГОРИЯ </span></h5>
+
+            </div>
+            <div class="row tovar" style="height:auto; max-height: 1000px; background: whitesmoke ">
+
+                {% for product_image in products_images %}
+                <div class="col-lg-3" style="height: border-box; padding: 5px;">
+                    <div class="product_item">
+                        <a href="{% url 'товар' product_image.product.id  %}">
+                            <div>
+                                <img src="{{product_image.image.url}}" style="width: 150px;height: 100px;"
+                                     class="img-responsive">
+                            </div>
+                        </a>
+                        <h6 style="margin-top: -8px">{{product_image.product.name}} </h6>
+                        <p style="color: orange">
+                            {{product_image.product.articul}}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+            </div>
+
+
+            {% if page_obj.has_other_pages %}
+            <nav aria-label="Page navigation">
+                <ul class="pagination" style="justify-content: center;margin-top: 15px">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{page_obj.previous_page_number}}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% for p in products_images.paginator.page_range %}
+                    {% if page_obj.number == p %}
+
+                    <li class="page-item disabled">
+                        <a class="page-link">{{p}}</a>
+                    </li>
+
+                    {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:+2 %}
+
+                    <li class="page-item"><a class="page-link" href="?page={{ p }}">{{p}}</a></li>
+
+                    {% endif %}
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{page_obj.next_page_number}}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+
+                </ul>
+            </nav>
+            {% endif %}
+
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

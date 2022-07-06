@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block page_content %}
+
+<div class="container-fluid container_kontact" style="min-height: 500px; background: black">
+    <div class="row">
+        <div class="col-lg-6" style="text-align: center">
+            <div class="row text_kontact_main">
+                <h2 style="padding: 5px;margin-top: 55px"> Контакты </h2>
+            </div>
+            <div class="row kontact_text" style="text-align: left">
+                <div class="col-lg-9 offset-lg-3">
+                    <p class="kontact_location" style="margin-top: 10px"><span style="font-weight: 400"> Склад: </span> Барановичи, ул. Королика
+                        8/25 </p>
+                    <p class="kontact_phone"><span style="font-weight: 400"> Директор: </span> + 375 (29) 729-31-72;
+                        +375 (29) 631-98-78 (Viber) </p>
+                    <p class="kontact_phone"><span style="font-weight: 400"> Бухгалтерия: </span> + 375 (29) 202-11-64
+                    </p>
+                    <p class="kontact_phone"><span style="font-weight: 400"> Отдел продаж: </span> + 375 (29) 202-11-64
+                    </p>
+                    <p class="kontact_phone" style="margin-top: -15px"><span style="font-weight: 300"> Тел/факс: </span> 8 (0163) 67-37-42(-51)
+                    </p>
+
+                    <p class="kontact_mail"><span style="font-weight: 400"> Email: </span> Regioncreate@yandex.by </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 " style=" text-align: center;margin-top: 25px">
+            <div class="row container_kontact_form">
+                <form action="" method="post" class="form-inline"> {% csrf_token %}
+
+
+                    <div id="mb-3 div_id_Имя" class="mb-3">
+                        <label for="id_Имя" class="control-group" style="margin-right: 363px;">Имя</label>
+                        <div class="controls">
+                            <input style="width: 400px; height: 35px;font-family:inherit;
+                                font-size: inherit;" type="text" name="Имя" maxlength="100"
+                                   class="textinput textInput"
+                                   id="id_Имя" placeholder="Введите ваше имя">
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3 tel_form">
+                        <div id="div_id_Телефон" class="control-group">
+                            <label for="id_Телефон" class="control-label requiredField" style="margin-right: 329px;">
+                                Телефон<span class="asteriskField">*</span>
+                            </label>
+                            <div class="controls">
+                                <input style="width: 400px; height: 40px;font-family:inherit;
+                            font-size: inherit;" type="text" name="Телефон" maxlength="16"
+                                       class="textinput textInput" required=""
+                                       id="id_Телефон" placeholder="Укажите номер вашего телефона">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 topic_form">
+                        <div id="div_id_Тема" class="control-group">
+                            <label for="id_Тема" class="control-label requiredField" style="margin-right: 355px;">
+                                Тема<span class="asteriskField">*</span>
+                            </label>
+                            <div class="controls">
+                                <input style="width: 400px; height: 40px;font-family:inherit;
+                                    font-size: inherit;" type="text" name="Тема" maxlength="30"
+                                       class="textinput textInput" required=""
+                                       id="id_Тема" placeholder="Укажите тему">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 text_form">
+                        <div id="div_id_Сообщение" class="control-group">
+                            <label for="id_Сообщение" class="control-label requiredField" style="margin-right: 308px;">
+                                Сообщение<span class="asteriskField">*</span>
+                            </label>
+                            <div class="controls">
+                            <textarea placeholder="Введите сообщение" style="width: 400px; height: 40px;font-family:inherit;
+                                    font-size: inherit;max-height: 200px;min-height: 40px;" type="text" name="Сообщение"
+                                      maxlength="500"
+                                      class="textinput textInput" required=""
+                                      id="id_Сообщение" rows="4"> </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button style="padding: 10px;
+                    width: 400px;
+                    font-family: inherit;
+                    margin-top: 8px;" type="submit" class="btn btn-warning"> Оставить заявку
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

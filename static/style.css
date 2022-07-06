@@ -1,0 +1,204 @@
+html, body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-brand {
+    font-weight: 400;
+}
+
+.btn-close:focus{
+    box-shadow: none;
+}
+
+.btn-warning:focus{
+    box-shadow: none;
+}
+
+.btn-warning:active{
+    border: 1px solid black;
+}
+
+
+.container_img {
+    height: 700px;
+    min-height: 200px;
+    width: 100%;
+    background-image: url(media/img/bg_top.jpg);
+    background-size: cover;
+}
+
+.container_text {
+    text-align: center;
+    margin-top: 290px;
+    color: white;
+    font-weight: 300;
+}
+
+.back_g_k_plugam {
+    height: 1000px;
+    background: whitesmoke;
+}
+
+.product_item {
+    height: 160px;
+    background: white;
+    margin-left: 25px;
+    position: relative;
+    border: 1px solid orange;
+    text-align: center;
+}
+
+.product_item_new {
+    height: 160px;
+    background: white;
+    margin-left: 8px;
+    position: relative;
+    border: 1px solid orange;
+    text-align: center;
+}
+
+
+.picture_info {
+    width: -webkit-fill-available;
+    border-radius: 6%;
+
+}
+
+.text_info_main {
+    color: orange;
+}
+
+.text_after_main {
+    color: white;
+}
+
+.text_about {
+    color: white;
+    font-weight: 300;
+}
+
+
+.text_kontact_main {
+    color: orange;
+    /*width: 182px;*/
+    /*margin-top: 132px;*/
+    /*margin-left: 214px;*/
+    letter-spacing: 3px;
+}
+
+.kontact_text {
+    color: white;
+    /*margin-left: -205px;*/
+    /*!*width: 240px;*!*/
+    /*margin-top: 208px;*/
+    /*text-align: center;*/
+    font-weight: 200;
+}
+
+.container_kontact_form {
+    color: white;
+    font-weight: 200;
+
+}
+
+
+.page-link {
+    color: black;
+    border: 1px solid orange;
+}
+
+.page-link:hover {
+    color: orange;
+    border: 1px solid orange;
+}
+
+.page-link:focus {
+    box-shadow: none;
+}
+
+.page-link:active {
+    border: 2px solid black;
+}
+
+.page-link:disabled {
+
+}
+
+#magnify {
+    display: none;
+    /* position: absolute; upd: 24.10.2016 */
+    position: fixed;
+    max-width: 600px;
+    height: auto;
+    z-index: 9999;
+}
+
+#magnify img {
+    width: 100%;
+    border-radius: 5%;
+    border: 4px solid orange;
+}
+
+/* затемняющий фон */
+#overlay {
+    display: none;
+    background: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    z-index: 9990;
+}
+
+/* кнопка закрытия */
+#close-popup {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+#close-popup i {
+    width: 30px;
+    height: 30px;
+    background: url(https://codernote.ru/files/cross.png) no-repeat center center;
+    background-size: 16px 16px;
+    display: block;
+
+}
+
+/*@keyframes rota {*/
+/*    45% {*/
+/*        transform: rotate(360deg);*/
+/*    }*/
+/*}*/
+
+/*#close-popup:hover {*/
+/*    animation: rota 4s infinite normal;*/
+/*    -webkit-animation-iteration-count: 1;*/
+/*    animation-iteration-count: 1;*/
+/*}*/
+
+
+.container_footer {
+    max-width: 100%;
+    background: black;
+    text-align: center;
+    height: 120px;
+    font-weight: 300;
+    color: white;
+    position: absolute;
+}
+
+.container-info {
+    margin-top: 30px;
+}
+
+
+
+
+
