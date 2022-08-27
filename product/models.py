@@ -31,7 +31,7 @@ class Product(models.Model):
     articul = models.CharField(max_length=30, default=None)
     description = models.TextField(max_length=1000)
     is_active = models.BooleanField(default=True)
-    nomera = models.TextField(max_length=500,default=None)
+    nomera = models.TextField(max_length=500, default=None)
     category = models.ForeignKey(ProductCategory, blank=True, null=True, default=None, on_delete=models.CASCADE)
     podcategory = models.ForeignKey(ProductExactCategory, blank=True, null=True, default=None, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
@@ -52,6 +52,8 @@ class ProductImage(models.Model):
     is_main = models.BooleanField(default=False)
     podcategory = models.ForeignKey(ProductExactCategory, blank=True, null=True, default=None, on_delete=models.CASCADE)
     category = models.ForeignKey(ProductCategory, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    name = models.CharField(max_length=30, default=None, blank=True, null=True)
+    articul = models.CharField(max_length=30, default=None, blank=True, null=True)
 
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)

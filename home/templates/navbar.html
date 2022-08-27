@@ -1,3 +1,51 @@
+<style>
+    nav.navbar .dropdown:hover > .dropdown-menu {
+        display: block;
+    }
+
+
+    nav.navbar .search .me-2 {
+        background-color: #fafafa;
+        border: 0;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+        transition: .3s box-shadow;
+        width: 100%;
+    }
+
+    nav.navbar .search .me-2:hover {
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    }
+
+    nav.navbar .search .me-2[type = "search"]::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+
+    }
+
+    nav.navbar .search .btn-outline-success {
+        border: 1px solid #FFC107;
+        background: #FFC107;
+        color: black;
+    }
+
+    nav.navbar .search .btn-outline-success:hover {
+        box-shadow: none;
+        background: orange;
+    }
+
+    nav.navbar .search .btn-outline-success:active {
+        box-shadow: none;
+        background: orange;
+        border: 1px solid black;
+    }
+
+    nav.navbar .search .btn-outline-success:focus {
+        box-shadow: none;
+
+    }
+
+</style>
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-black" xmlns="http://www.w3.org/1999/html">
     <div class="container-fluid">
         <div class="col-lg-1 " style="">
@@ -21,8 +69,9 @@
                        href="{% url 'Главная' %}">Главная</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" style="font-weight: 300;" id="navbarDropdownMenuLink"
-                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="{% url 'Общий каталог' %}" style="font-weight: 300;"
+                       id="navbarDropdownMenuLink"
+                       role="button" aria-expanded="false" aria-haspopup="true">
                         Каталог запчастей
                     </a>
                     <ul class="dropdown-menu" style="font-weight: 300;" aria-labelledby="navbarDropdownMenuLink">
@@ -51,7 +100,23 @@
                 <li class="nav-item">
                     <a class="nav-link" style="font-weight: 300;" href="{% url 'kontacts' %}">Контакты</a>
                 </li>
+
+
+                <li class="nav-item search" style="">
+                    <div class="container-fluid" style="margin-right: 3rem;">
+                        <form class="d-flex" role="search" action="{% url 'Общий каталог' %}">
+                            <input class="form-control me-2 " type="search" placeholder="Укажите название/артикул"
+                                   aria-label="Поиск" name="search">
+                            <button class="btn btn-outline-success" type="submit">Найти</button>
+                        </form>
+                    </div>
+
+                </li>
+
+
             </ul>
+
+
             <div class="" style="text-align: center">
                 <!-- Кнопка-триггер модального окна -->
                 <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">

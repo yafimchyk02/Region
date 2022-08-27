@@ -3,7 +3,7 @@ from feedback.forms import PeopleForm
 from news.models import *
 from product.models import *
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-
+from django.db.models import Q
 
 def homepage(request):
     news_items = News.objects.filter(is_active=True)
@@ -23,7 +23,14 @@ def product(request, product_id):
 
 
 def katalog_common(request):
-    products_images = ProductImage.objects.filter(is_active=True, is_main=True)
+    search_query = request.GET.get('search', '')
+
+    if search_query:
+        products_images = ProductImage.objects.filter(Q(articul__icontains=search_query) | Q(name__icontains=search_query), is_active=True, is_main=True)
+
+    else:
+        products_images = ProductImage.objects.filter(is_active=True, is_main=True)
+
     paginator = Paginator(products_images, 16)
 
     page_number = request.GET.get('page')
