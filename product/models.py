@@ -53,7 +53,7 @@ class ProductImage(models.Model):
     podcategory = models.ForeignKey(ProductExactCategory, blank=True, null=True, default=None, on_delete=models.CASCADE)
     category = models.ForeignKey(ProductCategory, blank=True, null=True, default=None, on_delete=models.CASCADE)
     name = models.CharField(max_length=30, default=None, blank=True, null=True)
-    articul = models.CharField(max_length=30, default=None, blank=True, null=True)
+    articul = models.CharField(max_length=150, default=None, blank=True, null=True)
 
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)

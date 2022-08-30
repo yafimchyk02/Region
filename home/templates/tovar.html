@@ -38,8 +38,8 @@
 <div class="container-fluid tovar_page" style=";background: white">
     <div class="row hronology" style=";height: 40px;">
         <span style="margin-top: 10px; font-weight: 300">
-        <a href="" style="text-decoration: none"> <span style="color: orange"> {{product.category.name}} / </span>  </a>
-        <a href="" style="text-decoration: none"> <span style="color: orange"> {{product.podcategory}} / </span>  </a>
+        <a href="{% url product.category.name %}" style="text-decoration: none"> <span style="color: orange"> {{product.category.name}} / </span>  </a>
+        <a href="{% url product.podcategory.name_exact %}" style="text-decoration: none"> <span style="color: orange"> {{product.podcategory}} / </span>  </a>
         <span style="font-weight: 400">{{product.name}} </span>
         </span>
 

@@ -46,7 +46,7 @@
 </style>
 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-black" xmlns="http://www.w3.org/1999/html">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-black" xmlns="http://www.w3.org/1999/html">
     <div class="container-fluid">
         <div class="col-lg-1 " style="">
             <div class="row" style="height:74px">
@@ -77,20 +77,20 @@
                     <ul class="dropdown-menu" style="font-weight: 300;" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="{% url 'К плугам' %}">К плугам</a></li>
                         <li><a class="dropdown-item" href="{% url 'К боронам' %}">К боронам</a></li>
-                        <li><a class="dropdown-item" href="{% url 'К культиваторам' %}">К культиваторам</a></li>
-                        <li><a class="dropdown-item" href="{% url 'К посевным' %}">К посевным агрегатам</a></li>
+                        <li><a class="dropdown-item" href="{% url 'К культиватрам' %}">К культиваторам</a></li>
+                        <li><a class="dropdown-item" href="{% url 'К посевным агрегатам' %}">К посевным агрегатам</a></li>
                         <li><a class="dropdown-item" href="{% url 'К косилкам' %}">К косилкам</a></li>
                         <li><a class="dropdown-item" href="{% url 'К граблям' %}">К граблям</a></li>
-                        <li><a class="dropdown-item" href="{% url 'К пресс-подбор' %}">К пресс-подборщикам</a></li>
-                        <li><a class="dropdown-item" href="{% url 'К кормоуборочным' %}">К кормоуборочным комбайнам</a>
+                        <li><a class="dropdown-item" href="{% url 'К пресс-подборщикам' %}">К пресс-подборщикам</a></li>
+                        <li><a class="dropdown-item" href="{% url 'К кормоуборочным комбайнам' %}">К кормоуборочным комбайнам</a>
                         </li>
-                        <li><a class="dropdown-item" href="{% url 'К зерноуборочным' %}">К зерноуборочным комбайнам</a>
+                        <li><a class="dropdown-item" href="{% url 'К зерноуборочным комбайнам' %}">К зерноуборочным комбайнам</a>
                         </li>
-                        <li><a class="dropdown-item" href="{% url 'К картофелеуборочным' %}">К картофелеуборочной
+                        <li><a class="dropdown-item" href="{% url 'К картофелеуборочной технике' %}">К картофелеуборочной
                             технике</a></li>
-                        <li><a class="dropdown-item" href="{% url 'К разбрасывтелям' %}">К разбрасывателям</a></li>
+                        <li><a class="dropdown-item" href="{% url 'К разбрасывателям' %}">К разбрасывателям</a></li>
                         <li><a class="dropdown-item" href="{% url 'К тракторам' %}">К тракторам</a></li>
-                        <li><a class="dropdown-item" href="{% url 'Метизы и расходные' %}">Метизы и расходные
+                        <li><a class="dropdown-item" href="{% url 'Метизы и расходные материалы' %}">Метизы и расходные материалы
                             материалы </a></li>
                     </ul>
                 </li>
@@ -117,19 +117,19 @@
             </ul>
 
 
-            <div class="" style="text-align: center">
+            <div class="modallka" style="text-align: center">
                 <!-- Кнопка-триггер модального окна -->
                 <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     Оформление заказов круглосуточно
                 </button>
 
                 <!-- Модальное окно -->
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="false" data-bs-keyboard="false"
                      tabindex="-1"
                      aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
-                            <div class="modal-header">
+                            <div class="modal-header" style="background: whitesmoke">
                                 <h5 class="modal-title" id="staticBackdropLabel" style="color: orange">Свяжитесь с
                                     нами:</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -145,7 +145,7 @@
                                 <p style="margin-top: -13px"><span style="font-family: FontAwesome">  </span> + 375
                                     (29) 202-11-71 </p>
                             </div>
-                            <div class="modal-footer">
+                            <div class="modal-footer" style="background: whitesmoke">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
                             </div>
                         </div>

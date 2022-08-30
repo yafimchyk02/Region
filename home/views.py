@@ -5,6 +5,7 @@ from product.models import *
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models import Q
 
+
 def homepage(request):
     news_items = News.objects.filter(is_active=True)
     products_images = ProductImage.objects.filter(is_active=True, is_main=True).order_by('-pk')[:6]
@@ -26,7 +27,8 @@ def katalog_common(request):
     search_query = request.GET.get('search', '')
 
     if search_query:
-        products_images = ProductImage.objects.filter(Q(articul__icontains=search_query) | Q(name__icontains=search_query), is_active=True, is_main=True)
+        products_images = ProductImage.objects.filter(
+            Q(articul__icontains=search_query) | Q(name__icontains=search_query), is_active=True, is_main=True)
 
     else:
         products_images = ProductImage.objects.filter(is_active=True, is_main=True)
@@ -58,6 +60,34 @@ def katalog_common(request):
 
 
 def k_plugam(request):
+    products_images = ProductImage.objects.filter(is_active=True, podcategory_id=1)
+    paginator = Paginator(products_images, 16)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    if 'page' in request.GET:
+        page = request.GET['page']
+
+    else:
+        page = 1
+    paginator = Paginator(products_images, 16)
+    try:
+        products_images = paginator.page(page)
+    except PageNotAnInteger:
+        products_images = paginator.page(1)
+    except EmptyPage:
+        products_images = paginator.page(paginator.num_pages)
+
+    context = {
+        'products_images': products_images,
+        'page_obj': page_obj
+    }
+
+    return render(request, 'k_plugam.html', context)
+
+
+def PPO8(request):
     products_images = ProductImage.objects.filter(is_active=True, podcategory_id=1)
     paginator = Paginator(products_images, 16)
 
@@ -946,6 +976,35 @@ def k_pres_pod(request):
     return render(request, 'k_pres_pod.html', locals())
 
 
+def PRF180(request):
+    products_images = ProductImage.objects.filter(is_active=True, category_id=8, is_main=True)
+    category = ProductCategory.objects.get(is_active=True, id=8)
+    paginator = Paginator(products_images, 16)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    if 'page' in request.GET:
+        page = request.GET['page']
+
+    else:
+        page = 1
+    paginator = Paginator(products_images, 16)
+    try:
+        products_images = paginator.page(page)
+    except PageNotAnInteger:
+        products_images = paginator.page(1)
+    except EmptyPage:
+        products_images = paginator.page(paginator.num_pages)
+
+    context = {
+        'products_images': products_images,
+        'page_obj': page_obj
+    }
+
+    return render(request, 'k_pres_pod.html', locals())
+
+
 def k_korm_ubor(request):
     products_images = ProductImage.objects.filter(is_active=True, category_id=9, is_main=True)
     category = ProductCategory.objects.get(is_active=True, id=9)
@@ -1149,7 +1208,65 @@ def k_zern_ubor(request):
     return render(request, 'k_zern_ubor.html', locals())
 
 
+def k_zern_ubor_lexion(request):
+    products_images = ProductImage.objects.filter(is_active=True, category_id=13, is_main=True)
+    category = ProductCategory.objects.get(is_active=True, id=13)
+    paginator = Paginator(products_images, 16)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    if 'page' in request.GET:
+        page = request.GET['page']
+
+    else:
+        page = 1
+    paginator = Paginator(products_images, 16)
+    try:
+        products_images = paginator.page(page)
+    except PageNotAnInteger:
+        products_images = paginator.page(1)
+    except EmptyPage:
+        products_images = paginator.page(paginator.num_pages)
+
+    context = {
+        'products_images': products_images,
+        'page_obj': page_obj
+    }
+
+    return render(request, 'k_zern_ubor.html', locals())
+
+
 def k_kartosh_ubor(request):
+    products_images = ProductImage.objects.filter(is_active=True, category_id=10, is_main=True)
+    category = ProductCategory.objects.get(is_active=True, id=10)
+    paginator = Paginator(products_images, 16)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    if 'page' in request.GET:
+        page = request.GET['page']
+
+    else:
+        page = 1
+    paginator = Paginator(products_images, 16)
+    try:
+        products_images = paginator.page(page)
+    except PageNotAnInteger:
+        products_images = paginator.page(1)
+    except EmptyPage:
+        products_images = paginator.page(paginator.num_pages)
+
+    context = {
+        'products_images': products_images,
+        'page_obj': page_obj
+    }
+
+    return render(request, 'k_kartosh_ubor.html', locals())
+
+
+def KTH2B(request):
     products_images = ProductImage.objects.filter(is_active=True, category_id=10, is_main=True)
     category = ProductCategory.objects.get(is_active=True, id=10)
     paginator = Paginator(products_images, 16)
