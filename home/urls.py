@@ -71,5 +71,6 @@ urlpatterns = [
     path('metizi/', views.metizi_i_rasxod, name='Метизы и расходные материалы'),
 
     path(r'product/(?P<product_id>\w+)/', views.product, name='товар'),
+    path(r'product_m/(?P<product_id>\w+)/', views.product_m, name='метизы'),
 
 ]

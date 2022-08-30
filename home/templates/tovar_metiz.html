@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_content %}
+
+<!-- Стиль для стрелок -->
+
+<style>
+    .slick-prev:before,
+    .slick-next:before {
+        display: none;
+
+    }
+
+    .slick-prev,
+    .slick-next {
+        width: 40px;
+        height: 36px;
+        z-index: 1;
+
+    }
+
+    .slick-prev, .slick-prev:hover, .slick-prev:focus {
+        left: 1px;
+        background: url("/static/media/img/left_st.png");
+
+
+    }
+
+    .slick-next, .slick-next:hover, .slick-next:focus {
+        right: 1px;
+        background: url("/static/media/img/rigt_st.png");
+    }
+</style>
+
+
+<div class="container-fluid tovar_page" style=";background: white">
+    <div class="row hronology" style=";height: 40px;">
+        <span style="margin-top: 10px; font-weight: 300">
+        <a href="{% url product.category.name %}" style="text-decoration: none"> <span style="color: orange"> {{product.category.name}} / </span>  </a>
+        <span style="font-weight: 400">{{product.name}} </span>
+        </span>
+
+    </div>
+
+    <div class="row" style="margin-top: 20px;height:auto">
+
+        <div class="col-lg-6 offset-lg-0" style="">
+            <div class="row" style="">
+                <div class="col-lg-10 offset-lg-1" style="font-family: FontAwesome">
+
+                    <div class="slider">
+                        {% for image_item in product.productimage_set.all %}
+                        <div class="slide">
+                            <a href="#"> <img src="{{image_item.image.url}}" class="minimized" style="width: -webkit-fill-available;
+                            border-radius: 5%;border: 2px solid black" alt="Клик для увеличения"></a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col-lg-6 offset-lg-0" style="background: ">
+            <div class="row" style="margin-top: 10px;text-align: center">
+                <h4 style="color:orange;font-weight: bold"> {{product.name}} </h4>
+            </div>
+
+            <div class="row" style="margin-top: 5px ">
+                <span style="color:black;font-weight: 400"> {{ product.description|linebreaks }} </span>
+            </div>
+
+            <div class="row" style=";background: whitesmoke">
+                <span style="font-weight: 500">  Артикул: <span
+                        style="font-weight: 400"> {{product.articul}} </span> </span>
+            </div>
+
+            <div class="row" style="background: lightgray;">
+                    <span style="font-weight: 500">  Каталожные номера: <span
+                            style="font-weight: 400"> {{product.nomera}} </span> </span>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="row" style="margin-top: 20px;text-align: center;margin-bottom: 10px; ">
+        <h5 style="color: black;letter-spacing: 1px;margin-top: 5px"> Наши товары вы можете приобрести со склада в г.
+            Барановичи</h5>
+    </div>
+
+    <div class="row" style="background: ;min-height: 50px;margin-bottom: 5px">
+        <div class="col-lg-6" style="text-align: center;margin-bottom: 5px; ">
+
+            <a class="" style="font-weight: 300;text-align: center"
+               href="{% url 'Общий каталог' %}">
+                <button type="button" class="btn btn-warning" style="width: 50%; height: 40px;">
+                    Вернуться в каталог
+                </button>
+            </a>
+
+        </div>
+
+        <div class="col-lg-6" style="text-align: center">
+            <div class="" style="text-align: center">
+                <!-- Кнопка-триггер модального окна -->
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                        style="height: 40px;width: 50%;">
+                    Проверить наличие
+                </button>
+
+                <!-- Модальное окно -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                     tabindex="-1"
+                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel" style="color: orange">Свяжитесь с
+                                    нами:</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Закрыть"></button>
+                            </div>
+                            <div class="modal-body" style="text-align: left;height: auto">
+                                <p> Директор:</p>
+                                <p style="margin-top: -13px"><span style="font-family: FontAwesome">  </span> + 375
+                                    (29) 729-31-72 </p>
+                                <p style="margin-top: -13px;"><span style="font-family: FontAwesome">  </span> + 375
+                                    (29) 631-98-78 (Viber) </p>
+                                <p> Специалист по продажам: </p>
+                                <p style="margin-top: -13px"><span style="font-family: FontAwesome">  </span> + 375
+                                    (29) 202-11-71 </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -50,6 +50,7 @@ class ProductImage(models.Model):
     image = models.ImageField(upload_to='products_images')
     is_active = models.BooleanField(default=True)
     is_main = models.BooleanField(default=False)
+    is_metiz = models.BooleanField(default=False)
     podcategory = models.ForeignKey(ProductExactCategory, blank=True, null=True, default=None, on_delete=models.CASCADE)
     category = models.ForeignKey(ProductCategory, blank=True, null=True, default=None, on_delete=models.CASCADE)
     name = models.CharField(max_length=30, default=None, blank=True, null=True)

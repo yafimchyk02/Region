@@ -8,7 +8,7 @@ from django.db.models import Q
 
 def homepage(request):
     news_items = News.objects.filter(is_active=True)
-    products_images = ProductImage.objects.filter(is_active=True, is_main=True).order_by('-pk')[:6]
+    products_images = ProductImage.objects.filter(is_active=True, is_main=True, is_metiz=False).order_by('-pk')[:6]
 
     return render(request, 'home.html', locals())
 
@@ -23,15 +23,21 @@ def product(request, product_id):
     return render(request, 'tovar.html', locals())
 
 
+def product_m(request, product_id):
+    product = Product.objects.get(id=product_id)
+
+    return render(request, 'tovar_metiz.html', locals())
+
+
 def katalog_common(request):
     search_query = request.GET.get('search', '')
 
     if search_query:
         products_images = ProductImage.objects.filter(
-            Q(articul__icontains=search_query) | Q(name__icontains=search_query), is_active=True, is_main=True)
+            Q(articul__icontains=search_query) | Q(name__icontains=search_query), is_active=True, is_main=True,is_metiz=False)
 
     else:
-        products_images = ProductImage.objects.filter(is_active=True, is_main=True)
+        products_images = ProductImage.objects.filter(is_active=True, is_main=True, is_metiz=False)
 
     paginator = Paginator(products_images, 16)
 
