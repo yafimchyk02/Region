@@ -5,7 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = [
-    path('home/', views.homepage, name='Главная'),
+    path('', views.homepage, name='Главная'),
     path('info/', views.info_page, name='info'),
     path('kontacts/', views.kontacts_page, name='kontacts'),
     path('katalog_common/', views.katalog_common, name='Общий каталог'),
@@ -49,8 +49,8 @@ urlpatterns = [
 
     path('k_korm_ubor/', views.k_korm_ubor, name='К кормоуборочным комбайнам'),
     path('k_korm_ubor/kpk_3000', views.k_korm_ubor_kpk_3000, name='КПК-3000, КГ-6 “Полесье”'),
-    path('k_korm_ubor/kvk_800', views.k_korm_ubor_kvk_800, name='КВК-800 "ПАЛЕССЕ" FS80'),
-    path('k_korm_ubor/kvk_8060', views.k_korm_ubor_kvk_8060, name='КВК-8060 "ПАЛЕССЕ " FS8060'),
+    path('k_korm_ubor/kvk_800', views.k_korm_ubor_kvk_800, name='КВК-800 ПАЛЕССЕ FS80'),
+    path('k_korm_ubor/kvk_8060', views.k_korm_ubor_kvk_8060, name='КВК-8060 ПАЛЕССЕ FS8060'),
     path('k_korm_ubor/jaguar', views.k_korm_ubor_jaguar, name='Claas Jaguar'),
     path('k_korm_ubor/john', views.k_korm_ubor_john, name='John Deere'),
 

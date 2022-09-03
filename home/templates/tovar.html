@@ -35,7 +35,7 @@
 </style>
 
 
-<div class="container-fluid tovar_page" style=";background: white">
+<div class="container-fluid tovar_page" style=";background: white;min-height: 80vh;">
     <div class="row hronology" style=";height: 40px;">
         <span style="margin-top: 10px; font-weight: 300">
         <a href="{% url product.category.name %}" style="text-decoration: none"> <span style="color: orange"> {{product.category.name}} / </span>  </a>
@@ -89,7 +89,7 @@
 
     </div>
 
-    <div class="row" style="margin-top: 20px;text-align: center;margin-bottom: 10px; ">
+    <div class="row" style="margin-top: 5px;text-align: center;margin-bottom: 1px; ">
         <h5 style="color: black;letter-spacing: 1px;margin-top: 5px"> Наши товары вы можете приобрести со склада в г.
             Барановичи</h5>
     </div>
@@ -115,7 +115,7 @@
                 </button>
 
                 <!-- Модальное окно -->
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="false" data-bs-keyboard="false"
                      tabindex="-1"
                      aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
