@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block page_content %}
-<div class="container-fluid back_g_k_plugam">
+<div class="container-fluid back_g_k_plugam" style="height: auto; min-height: 500px ;background: whitesmoke">
     <div class="row">
         <div class="col-lg-2" style="height:auto; background: whitesmoke">
             <div class="row" style="min-height: 60px;">
@@ -58,7 +58,7 @@
 
             </div>
 
-            <div class="row tovar" style="height:auto; max-height: 1000px; background: whitesmoke ">
+            <div class="row tovar" style="height:auto;background: whitesmoke ">
 
                 {% for product_image in products_images %}
                 <div class="col-lg-3" style="height: border-box; padding: 5px;">
@@ -74,12 +74,13 @@
                             {{product_image.product.articul}}
                         </p>
                     </div>
+
+
                 </div>
                 {% endfor %}
 
-
             </div>
-
+            <!-- Переключатель страниц -->
 
             {% if page_obj.has_other_pages %}
             <nav aria-label="Page navigation">
@@ -120,6 +121,7 @@
             {% endif %}
 
         </div>
+
     </div>
 
 
